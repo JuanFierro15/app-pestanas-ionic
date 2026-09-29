@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonButton } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonButton, IonBadge, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { add, remove } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonButton]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonButton, IonBadge, IonGrid, IonRow, IonCol, IonIcon]
 })
 export class Tab2Page {
   public counter: number = 0;
 
-  constructor() {}
+  constructor() {
+    addIcons({ add, remove });
+  }
 
   public increase(): void {
     this.counter++;

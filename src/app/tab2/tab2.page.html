@@ -15,9 +15,26 @@
 
   <ion-card class="contador-card">
     <ion-card-content>
+      <p class="contador-etiqueta">Event binding (click)</p>
       <p class="contador-valor">{{ counter }}</p>
-      <ion-button color="success" (click)="increase()">+1 Aumentar</ion-button>
-      <ion-button color="warning" (click)="decrease()" [disabled]="counter === 0">-1 Disminuir</ion-button>
+      <ion-badge class="contador-badge" [color]="counter % 2 === 0 ? 'primary' : 'warning'">{{ counter % 2 === 0 ? 'Número par' : 'Número impar' }}</ion-badge>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" shape="round" color="success" (click)="increase()">
+              <ion-icon name="add" slot="start"></ion-icon>
+              +1 Aumentar
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" shape="round" color="warning" (click)="decrease()" [disabled]="counter === 0">
+              <ion-icon name="remove" slot="start"></ion-icon>
+              -1 Disminuir
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>

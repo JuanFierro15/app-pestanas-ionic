@@ -2,8 +2,28 @@
   text-align: center;
 }
 
+.contador-etiqueta {
+  margin: 8px 0 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
 .contador-valor {
   font-size: 96px;
   font-weight: bold;
+  line-height: 1;
   margin: 16px 0;
+  color: var(--ion-color-primary);
+}
+
+.contador-badge {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+ion-grid {
+  margin-top: 16px;
+  padding: 0;
 }
