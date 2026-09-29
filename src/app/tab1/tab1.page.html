@@ -3,6 +3,10 @@
     <ion-title>
       Inicio
     </ion-title>
+    <div slot="end" class="tema-switch">
+      <ion-icon [name]="isDark ? 'moon-outline' : 'sunny-outline'"></ion-icon>
+      <ion-toggle class="squish" [checked]="isDark" (ionChange)="toggleTheme($event)" aria-label="Cambiar tema"></ion-toggle>
+    </div>
   </ion-toolbar>
 </ion-header>
 

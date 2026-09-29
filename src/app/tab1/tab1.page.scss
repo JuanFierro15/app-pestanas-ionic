@@ -28,3 +28,32 @@ ion-item {
   --padding-start: 0;
   --inner-padding-end: 0;
 }
+
+.tema-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 16px;
+}
+
+.squish {
+  --track-background: rgba(var(--ion-color-primary-contrast-rgb), 0.35);
+  --track-background-checked: rgba(var(--ion-color-primary-contrast-rgb), 0.35);
+  --handle-background: var(--ion-color-primary-contrast);
+  --handle-background-checked: var(--ion-color-primary-contrast);
+  --handle-width: 24px;
+  --handle-height: 24px;
+  --handle-spacing: 3px;
+  --handle-max-height: 24px;
+  --handle-transition: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 56px;
+  height: 30px;
+}
+
+.squish::part(handle) {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.2s ease, border-radius 0.2s ease;
+}
+
+.squish:active {
+  --handle-width: 34px;
+}
