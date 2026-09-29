@@ -14,33 +14,42 @@
   </ion-header>
 
   <ion-card>
+    <div class="perfil-portada"></div>
+    <ion-avatar class="perfil-avatar" [class.ocupado]="!isAvailable">
+      <img alt="Avatar del estudiante" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+
     <ion-card-header class="perfil-header">
-      <ion-avatar class="perfil-avatar">
-        <img alt="Avatar del estudiante" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-      </ion-avatar>
       <ion-card-title>{{ studentName }}</ion-card-title>
       <ion-card-subtitle>{{ career }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-item>
-        <ion-icon name="mail-outline" slot="start"></ion-icon>
-        <ion-label>{{ email }}</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="logo-github" slot="start"></ion-icon>
-        <ion-label>{{ github }}</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="location-outline" slot="start"></ion-icon>
-        <ion-label>{{ city }}</ion-label>
-      </ion-item>
-
       <div class="perfil-estado">
-        <ion-badge [color]="isAvailable ? 'success' : 'danger'">{{ isAvailable ? 'Disponible' : 'Ocupado' }}</ion-badge>
+        <ion-chip [color]="isAvailable ? 'success' : 'danger'">
+          <ion-label>● {{ isAvailable ? 'Disponible' : 'Ocupado' }}</ion-label>
+        </ion-chip>
       </div>
 
-      <ion-button expand="block" (click)="toggleStatus()">Cambiar estado</ion-button>
+      <ion-list [inset]="true" lines="none">
+        <ion-item>
+          <ion-icon name="mail-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>{{ email }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="logo-github" slot="start" color="primary"></ion-icon>
+          <ion-label>{{ github }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="location-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>{{ city }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="block" shape="round" [color]="isAvailable ? 'success' : 'danger'" (click)="toggleStatus()">
+        <ion-icon name="swap-horizontal-outline" slot="start"></ion-icon>
+        Cambiar estado
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
