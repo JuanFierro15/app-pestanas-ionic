@@ -1,0 +1,30 @@
+.bienvenida-header {
+  text-align: center;
+  padding: 24px 16px;
+  background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-primary-shade));
+
+  ion-card-title,
+  ion-card-subtitle,
+  .bienvenida-icono {
+    color: var(--ion-color-primary-contrast);
+  }
+}
+
+.bienvenida-icono {
+  font-size: 56px;
+  margin-bottom: 8px;
+}
+
+.bienvenida-contenido {
+  text-align: center;
+  padding-top: 16px;
+}
+
+ion-list {
+  padding: 0;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
