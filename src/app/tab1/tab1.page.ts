@@ -14,11 +14,10 @@ export class Tab1Page {
   public career: string = 'Ingeniería de Software';
   public university: string = 'Universidad Surcolombiana';
 
-  public isDark: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  public isDark: boolean = document.documentElement.classList.contains('ion-palette-dark');
 
   constructor() {
     addIcons({ schoolOutline, ribbonOutline, businessOutline, codeSlashOutline, handLeftOutline, linkOutline, sunnyOutline, moonOutline });
-    document.documentElement.classList.toggle('ion-palette-dark', this.isDark);
   }
 
   public toggleTheme(event: CustomEvent): void {

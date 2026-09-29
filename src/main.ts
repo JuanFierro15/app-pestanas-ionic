@@ -5,6 +5,8 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
+document.documentElement.classList.toggle('ion-palette-dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
