@@ -18,22 +18,36 @@ El objetivo es practicar la navegación por pestañas y el manejo de estado en T
 ## Funcionalidades
 
 ### Inicio
-- Tarjeta de bienvenida con el nombre completo, la carrera y la universidad del estudiante.
+- Tarjeta de bienvenida con el nombre completo, la carrera y la universidad del estudiante, sobre una cabecera con degradado azul.
+- Segunda tarjeta, "Sobre este laboratorio", con los tres conceptos de enlace de datos que se practican.
 - Los datos viven en variables de `tab1.page.ts` y se muestran con interpolación.
+- Interruptor de tema en la barra superior (ver más abajo).
 
 ### Contador
-- Contador numérico con botones **+1 Aumentar** y **-1 Disminuir**.
+- Contador numérico grande con botones **+1 Aumentar** y **-1 Disminuir** en una misma fila.
 - El valor nunca baja de cero: la validación está en el método `decrease()` y el botón se deshabilita cuando el contador está en 0.
+- Una etiqueta indica si el número es par o impar, y cambia de color con la paridad.
 
 ### Perfil
-- Tarjeta de presentación con avatar, nombre, carrera y datos de contacto (correo, GitHub y ciudad).
-- Estado **Disponible** u **Ocupado** con color reactivo (verde o rojo) que se alterna con el botón **Cambiar estado**.
+- Tarjeta de presentación con portada, avatar, nombre, carrera y datos de contacto (correo, GitHub y ciudad).
+- Estado **Disponible** u **Ocupado** que se alterna con el botón **Cambiar estado**. El color cambia en el anillo del avatar, en la etiqueta de estado y en el botón (verde o rojo).
+
+## Tema claro y oscuro
+
+En la barra superior de la pestaña **Inicio** hay un interruptor con un sol y una luna para cambiar entre el tema claro y el oscuro. El cambio se aplica a las tres pestañas.
+
+- Al abrir la aplicación se usa la preferencia del sistema (`prefers-color-scheme`).
+- El interruptor agrega o quita la clase `ion-palette-dark` en el elemento `<html>`, y las variables de color de Ionic cambian de valor. La paleta completa está en `src/theme/variables.scss`.
+- El efecto "squish" del interruptor se logra con las variables CSS de `ion-toggle` y una transición con rebote.
+- La elección no se guarda: al recargar vuelve a la preferencia del sistema.
 
 ## Conceptos aplicados
 
 - **Interpolación** `{{ variable }}`: muestra en el HTML el valor de una propiedad de TypeScript.
 - **Enlace de eventos** `(click)="metodo()"`: ejecuta un método de la clase cuando el usuario pulsa un botón.
 - **Enlace de propiedades** `[color]="isAvailable ? 'success' : 'danger'"`: asigna una expresión a una propiedad de un componente de Ionic.
+- **Enlace de clases** `[class.ocupado]="!isAvailable"`: agrega una clase CSS solo cuando se cumple la condición. Se usa para el anillo del avatar.
+- **Variables CSS de Ionic**: los colores y estilos se personalizan con propiedades como `--ion-color-primary`, sin tocar los componentes.
 - **Navegación por pestañas con lazy loading**: `tabs.routes.ts` define rutas hijas con `loadComponent`, así el código de cada pestaña se descarga solo cuando se abre.
 - **Componentes standalone**: cada página declara en `imports` los componentes de Ionic que usa.
 
@@ -48,26 +62,34 @@ El objetivo es practicar la navegación por pestañas y el manejo de estado en T
 ## Estructura del proyecto
 
 ```
-src/app/
-├── app.component.ts
-├── app.routes.ts
-├── tabs/
-│   ├── tabs.page.ts
-│   ├── tabs.page.html
-│   └── tabs.routes.ts
-├── tab1/
-│   ├── tab1.page.ts
-│   ├── tab1.page.html
-│   └── tab1.page.scss
-├── tab2/
-│   ├── tab2.page.ts
-│   ├── tab2.page.html
-│   └── tab2.page.scss
-└── tab3/
-    ├── tab3.page.ts
-    ├── tab3.page.html
-    └── tab3.page.scss
+src/
+├── main.ts
+├── global.scss
+├── theme/
+│   └── variables.scss
+└── app/
+    ├── app.component.ts
+    ├── app.routes.ts
+    ├── tabs/
+    │   ├── tabs.page.ts
+    │   ├── tabs.page.html
+    │   ├── tabs.page.scss
+    │   └── tabs.routes.ts
+    ├── tab1/
+    │   ├── tab1.page.ts
+    │   ├── tab1.page.html
+    │   └── tab1.page.scss
+    ├── tab2/
+    │   ├── tab2.page.ts
+    │   ├── tab2.page.html
+    │   └── tab2.page.scss
+    └── tab3/
+        ├── tab3.page.ts
+        ├── tab3.page.html
+        └── tab3.page.scss
 ```
+
+`src/theme/variables.scss` guarda la paleta de colores (clara y oscura) y `src/global.scss` el estilo base de las tarjetas. Las capturas del inicio de este archivo están en `docs/`.
 
 ## Cómo ejecutarlo
 
