@@ -27,3 +27,8 @@ ion-grid {
   margin-top: 16px;
   padding: 0;
 }
+
+:host-context(.ion-palette-dark) .boton-disminuir::part(native) {
+  background: var(--ion-color-danger);
+  color: var(--ion-color-danger-contrast);
+}
