@@ -40,6 +40,8 @@
   --app-accent-text: var(--ion-color-primary);
   --app-success-text: var(--ion-color-success);
   --app-danger-text: var(--ion-color-danger);
+  --app-gradient-end: var(--ion-color-primary-shade);
+  --app-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 :root.ion-palette-dark {
@@ -88,18 +90,19 @@
   --app-accent-text: #9ca6ae;
   --app-success-text: #9fa8a2;
   --app-danger-text: #daada9;
+  --app-gradient-end: var(--ion-color-secondary);
+  --app-card-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 :root.ion-palette-dark,
 :root.ion-palette-dark.ios,
 :root.ion-palette-dark.md {
-  --ion-background-color: #0f172a;
-  --ion-background-color-rgb: 15, 23, 42;
+  --ion-background-color: #202429;
+  --ion-background-color-rgb: 32, 36, 41;
   --ion-text-color: #f1f5f9;
   --ion-text-color-rgb: 241, 245, 249;
-  --ion-card-background: #1e293b;
+  --ion-card-background: #212e3c;
   --ion-card-color: #94a3b8;
-  --ion-item-background: #1e293b;
-  --ion-toolbar-background: #1e293b;
-  --ion-tab-bar-background: #1e293b;
+  --ion-item-background: #212e3c;
+  --ion-tab-bar-background: #212e3c;
 }
