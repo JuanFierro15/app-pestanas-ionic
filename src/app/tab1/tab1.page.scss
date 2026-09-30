@@ -21,6 +21,15 @@
   padding-top: 16px;
 }
 
+ion-chip.chip-acento {
+  --color: var(--app-accent-text);
+  --background: color-mix(in srgb, var(--app-accent-text) 8%, transparent);
+}
+
+.icono-acento {
+  color: var(--app-accent-text);
+}
+
 ion-list {
   padding: 0;
 }

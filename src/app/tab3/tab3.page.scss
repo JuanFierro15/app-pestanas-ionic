@@ -8,18 +8,32 @@
   height: 112px;
   margin: -56px auto 0;
   border: 4px solid var(--ion-card-background);
-  box-shadow: 0 0 0 4px var(--ion-color-success);
+  box-shadow: 0 0 0 4px var(--app-success-text);
   box-sizing: content-box;
   position: relative;
 
   &.ocupado {
-    box-shadow: 0 0 0 4px var(--ion-color-danger);
+    box-shadow: 0 0 0 4px var(--app-danger-text);
   }
 }
 
 .perfil-header {
   text-align: center;
   padding-top: 16px;
+}
+
+ion-chip.chip-estado {
+  --color: var(--app-success-text);
+  --background: color-mix(in srgb, var(--app-success-text) 8%, transparent);
+
+  &.ocupado {
+    --color: var(--app-danger-text);
+    --background: color-mix(in srgb, var(--app-danger-text) 8%, transparent);
+  }
+}
+
+.icono-acento {
+  color: var(--app-accent-text);
 }
 
 .perfil-estado {
